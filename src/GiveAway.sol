@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
+import "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
 
-contract GiveAway {
+contract GiveAway is ERC721 {
     /* @author: SOUFIANE MASAD */
     /* @title: Give away smart contract */
     /* @description: 
@@ -20,7 +21,7 @@ contract GiveAway {
 
     error NumberOfParticipantsReached();
 
-    constructor() {
+    constructor() ERC721("GiveAway Token", "GVTK") {
         i_owner = msg.sender;
         startTime = block.timestamp;
     }
@@ -30,5 +31,17 @@ contract GiveAway {
             revert NumberOfParticipantsReached();
         }
         participants.push(msg.sender);
+    }
+
+    function tokenURI(
+        uint256 /*tokenId*/
+    ) public pure override returns (string memory) {
+        string memory baseURI = _baseURI();
+        return baseURI;
+    }
+
+    function _baseURI() internal pure override returns (string memory) {
+        return
+            "https://ipfs.io/ipfs/QmSSbXvkYaz7v8oVAN8SJdDPk1FVKT2ws4cv2De9brBFCF";
     }
 }

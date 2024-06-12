@@ -1,0 +1,19 @@
+{
+    "name": "The NFT winner giveaway",
+    "description": "This NFT is a ticket that allows to his owner a FREE entrance to the famous musical concert JAZZABLANCA organized in Casablanca",
+    "image": "https://ipfs.io/ipfs/QmeQww5qsHgdpWNZFMEpvGp1TJuRzaEY52joioirkE5KBh",
+    "attributes": [
+        {
+            "trait_type": "Place number",
+            "value": "246"
+        },
+        {
+            "trait_type": "Door",
+            "value": "Door-A-23"
+        },
+        {
+            "trait_type": "Zone",
+            "value": "Zone-H"
+        }
+    ]
+}
