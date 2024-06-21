@@ -138,4 +138,8 @@ contract GiveAway is
     function getOwner() external view returns (address) {
         return i_owner;
     }
+
+    function getParticipants() external view returns (address[] memory) {
+        return participants;
+    }
 }

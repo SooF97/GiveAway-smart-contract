@@ -31,4 +31,11 @@ contract GiveAwayTest is Test {
         emit log_address(deployer);
         return giveAway.getOwner();
     }
+
+    function testRegisterParticipant() public {
+        vm.prank(0x6893BeB2EE68f82dac5A672874FBAF7161D87411);
+        giveAway.registerParticipant();
+        address[] memory result = giveAway.getParticipants();
+        assertEq(result[0], 0x6893BeB2EE68f82dac5A672874FBAF7161D87411);
+    }
 }
